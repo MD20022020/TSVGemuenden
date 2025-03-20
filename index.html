@@ -3,80 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSV Gemünden (Wohra)</title>
+    <title>Senioren - TSV Gemünden</title>
     <script type="text/javascript" src="https://www.fussball.de/widgets.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
         header { background: #444; color: white; padding: 20px; text-align: center; font-size: 24px; }
-        nav { background: #333; padding: 10px; text-align: center; }
-        nav a { color: white; text-decoration: none; padding: 10px 20px; display: inline-block; cursor: pointer; }
-        nav a:hover { background: #ff0000; }
-        .content { padding: 20px; display: flex; justify-content: center; flex-wrap: wrap; }
+        .content { display: flex; justify-content: space-between; padding: 20px; }
         .left { width: 60%; padding: 20px; background: white; border-radius: 8px; }
         .right { width: 35%; padding: 20px; background: white; border-radius: 8px; text-align: center; }
+        .right .fussballde_widget { margin-left: 20px; } /* Widget leicht nach rechts versetzt */
         footer { background: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
-        .fussballde_widget { margin-left: 20px; } /* Widget leicht nach rechts versetzt */
     </style>
 </head>
 <body>
 
     <header>
         <h1>TSV Gemünden (Wohra)</h1>
-        <p>Herzlich Willkommen</p>
     </header>
 
-    <nav>
-        <a onclick="loadPage('home')">Home</a>
-        <a onclick="loadPage('aktuelles')">Aktuelles</a>
-        <a onclick="loadPage('senioren')">Senioren</a>
-        <a onclick="loadPage('jugend')">Jugend</a>
-        <a onclick="loadPage('verein')">Verein</a>
-        <a onclick="loadPage('spielstätten')">Spielstätten</a>
-    </nav>
+    <div class="content">
+        <div class="left">
+            <h2>Senioren</h2>
+            <p>Hier finden Sie Informationen zu den Senioren.</p>
+            <img src="images/home-bild.jpg" alt="Platzhalterbild für Home" style="width: 100%; border-radius: 8px;">
+        </div>
 
-    <div id="content" class="content">
-        <!-- Inhalt wird hier dynamisch geladen -->
+        <div class="right">
+            <h2>Spielplan & Ergebnisse</h2>
+            <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
+        </div>
     </div>
 
     <footer>
         <p>Kontakt: info@gemuenden.de | Adresse: Auestraße 24, 35285 Gemünden</p>
     </footer>
-
-    <script>
-        function loadPage(page) {
-            const contentDiv = document.getElementById("content");
-
-            if (page === "home") {
-                contentDiv.innerHTML = `<div class="info">
-                    <h2>Willkommen beim TSV Gemünden (Wohra)</h2>
-                    <p>Wir sind ein leidenschaftlicher Fußballverein mit einer starken Gemeinschaft und großer Begeisterung für den Sport.</p>
-                </div>`;
-            } else if (page === "senioren") {
-                contentDiv.innerHTML = `
-                    <div class="left">
-                        <h2>Senioren</h2>
-                        <p>Hier finden Sie Informationen zu den Senioren.</p>
-                        <img src="images/home-bild.jpg" alt="Platzhalterbild für Home" style="width: 100%; border-radius: 8px;">
-                    </div>
-
-                    <div class="right">
-                        <h2>Spielplan & Ergebnisse</h2>
-                        <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
-                    </div>
-                `;
-                
-                // Widget nach dem Laden des Inhalts erneut laden
-                if (window.fussballDeWidgets) {
-                    window.fussballDeWidgets.load();
-                }
-            } else {
-                contentDiv.innerHTML = `<div class="info">
-                    <h2>${page.charAt(0).toUpperCase() + page.slice(1)}</h2>
-                    <p>Hier finden Sie Informationen zu ${page}.</p>
-                </div>`;
-            }
-        }
-    </script>
 
 </body>
 </html>
