@@ -13,7 +13,10 @@
         nav a:hover { background: #ff0000; }
         .content { text-align: center; padding: 20px; }
         .info { background: white; padding: 20px; margin: 20px; border-radius: 8px; }
+        .content .left { width: 60%; padding: 20px; background: white; border-radius: 8px; float: left; }
+        .content .right { width: 35%; padding: 20px; background: white; border-radius: 8px; text-align: center; }
         footer { background: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        .fussballde_widget { margin-left: 20px; } /* Widget leicht nach rechts versetzt */
     </style>
 </head>
 <body>
@@ -33,10 +36,7 @@
     </nav>
 
     <div id="content" class="content">
-        <div class="info">
-            <h2>Willkommen beim TSV Gemünden (Wohra)</h2>
-            <p>Wir sind ein leidenschaftlicher Fußballverein mit einer starken Gemeinschaft und großer Begeisterung für den Sport.</p>
-        </div>
+        <!-- Content wird hier dynamisch geladen -->
     </div>
 
     <footer>
@@ -53,13 +53,18 @@
                     <p>Wir sind ein leidenschaftlicher Fußballverein mit einer starken Gemeinschaft und großer Begeisterung für den Sport.</p>
                 </div>`;
             } else if (page === "senioren") {
-                contentDiv.innerHTML = `<div class="info">
-                    <h2>Senioren</h2>
-                    <p>Hier finden Sie Informationen zu den Senioren.</p>
-                    <img src="images/home-bild.jpg" alt="Platzhalterbild für Home" style="width: 100%; border-radius: 8px;">
-                    <h2>Spielplan & Ergebnisse</h2>
-                    <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
-                </div>`;
+                contentDiv.innerHTML = `
+                    <div class="left">
+                        <h2>Senioren</h2>
+                        <p>Hier finden Sie Informationen zu den Senioren.</p>
+                        <img src="images/home-bild.jpg" alt="Platzhalterbild für Home" style="width: 100%; border-radius: 8px;">
+                    </div>
+
+                    <div class="right">
+                        <h2>Spielplan & Ergebnisse</h2>
+                        <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
+                    </div>
+                `;
                 // Widget erneut laden
                 if (window.fussballDeWidgets) {
                     window.fussballDeWidgets.load();
