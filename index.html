@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senioren - TSV Gemünden</title>
-    <script type="text/javascript" src="https://www.fussball.de/widgets.js"></script>
+    <title>TSV Gemünden (Wohra) - Herzlich Willkommen</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-        header { background: #444; color: white; padding: 20px; text-align: center; font-size: 24px; }
-        .content { display: flex; justify-content: space-between; padding: 20px; }
-        .left { width: 60%; padding: 20px; background: white; border-radius: 8px; }
-        .right { width: 35%; padding: 20px; background: white; border-radius: 8px; text-align: center; }
-        .right .fussballde_widget { margin-left: 20px; } /* Widget leicht nach rechts versetzt */
+        header { background: #444; color: white; padding: 20px; text-align: center; font-size: 24px; position: relative; }
+        .logo { position: absolute; right: 20px; top: 10px; width: 80px; }
+        nav { background: #333; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; display: inline-block; }
+        nav a:hover { background: #ff0000; }
+        .hero { text-align: center; padding: 20px; background: #eee; }
+        .hero img { width: 100%; max-height: 400px; object-fit: cover; }
+        .content { text-align: center; padding: 20px; }
+        .info { background: white; padding: 20px; margin: 20px; border-radius: 8px; }
         footer { background: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>TSV Gemünden (Wohra)</h1>
+        <p>Herzlich Willkommen</p>
+        <img src="images/logo.png" alt="Vereinslogo" class="logo">  <!-- Ersetze mit deinem Logo -->
     </header>
-
+    <nav>
+        <a href="home.html" target="_blank">Home</a>
+        <a href="aktuelles.html" target="_blank">Aktuelles</a>
+        <a href="senioren.html" target="_blank">Senioren</a>
+        <a href="jugend.html" target="_blank">Jugend</a>
+        <a href="verein.html" target="_blank">Verein</a>
+        <a href="spielstaetten.html" target="_blank">Spielstätten</a>
+    </nav>
+    <div class="hero">
+        <img src="https://www.tsv-gemuenden.de/wp-content/uploads/2016/10/286264019_7582245235150177_6314602789260802998_n-920x620.jpg" alt="Vereinsbild">
+    </div>
     <div class="content">
-        <div class="left">
-            <h2>Senioren</h2>
-            <p>Hier finden Sie Informationen zu den Senioren.</p>
-            <img src="images/home-bild.jpg" alt="Platzhalterbild für Home" style="width: 100%; border-radius: 8px;">
-        </div>
-
-        <div class="right">
-            <h2>Spielplan & Ergebnisse</h2>
-            <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
+        <div class="info">
+            <h2>Herzlich Willkommen beim TSV Gemünden (Wohra)</h2>
+            <p>Wir sind ein leidenschaftlicher Fußballverein mit einer starken Gemeinschaft und großer Begeisterung für den Sport.</p>
         </div>
     </div>
-
     <footer>
         <p>Kontakt: info@gemuenden.de | Adresse: Auestraße 24, 35285 Gemünden</p>
     </footer>
-
 </body>
 </html>
