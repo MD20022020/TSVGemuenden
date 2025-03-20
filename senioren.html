@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senioren - TSV Gemünden</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #444; color: white; padding: 20px; text-align: center; font-size: 24px; }
+        .content { display: flex; justify-content: space-between; padding: 20px; }
+        .left { width: 60%; padding: 20px; background: white; border-radius: 8px; }
+        .right { width: 35%; padding: 20px; background: white; border-radius: 8px; text-align: center; }
+        .right .fussballde_widget { margin-left: 20px; } /* Widget leicht nach rechts versetzt */
+        footer { background: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+    </style>
 </head>
 <body>
-    <h1>Senioren</h1>
-    <p>Hier finden sie Informationen zu den Senioren.</p>
-    <img src="images/home-bild.jpg" alt="Platzhalterbild für Home">
+
+    <header>
+        <h1>TSV Gemünden (Wohra)</h1>
+    </header>
+
+    <div class="content">
+        <!-- Linke Seite mit Text & Bild -->
+        <div class="left">
+            <h2>Senioren</h2>
+            <p>Hier finden Sie Informationen zu den Senioren.</p>
+            <img src="images/home-bild.jpg" alt="Platzhalterbild für Home" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <!-- Rechte Seite mit Fußball.de Widget -->
+        <div class="right">
+            <h2>Spielplan & Ergebnisse</h2>
+            <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Kontakt: info@gemuenden.de | Adresse: Auestraße 24, 35285 Gemünden</p>
+    </footer>
+
 </body>
 </html>
