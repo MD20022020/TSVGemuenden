@@ -11,10 +11,9 @@
         nav { background: #333; padding: 10px; text-align: center; }
         nav a { color: white; text-decoration: none; padding: 10px 20px; display: inline-block; cursor: pointer; }
         nav a:hover { background: #ff0000; }
-        .content { text-align: center; padding: 20px; }
-        .info { background: white; padding: 20px; margin: 20px; border-radius: 8px; }
-        .content .left { width: 60%; padding: 20px; background: white; border-radius: 8px; float: left; }
-        .content .right { width: 35%; padding: 20px; background: white; border-radius: 8px; text-align: center; }
+        .content { padding: 20px; display: flex; justify-content: center; flex-wrap: wrap; }
+        .left { width: 60%; padding: 20px; background: white; border-radius: 8px; }
+        .right { width: 35%; padding: 20px; background: white; border-radius: 8px; text-align: center; }
         footer { background: #222; color: white; text-align: center; padding: 10px; margin-top: 20px; }
         .fussballde_widget { margin-left: 20px; } /* Widget leicht nach rechts versetzt */
     </style>
@@ -36,7 +35,7 @@
     </nav>
 
     <div id="content" class="content">
-        <!-- Content wird hier dynamisch geladen -->
+        <!-- Inhalt wird hier dynamisch geladen -->
     </div>
 
     <footer>
@@ -65,7 +64,8 @@
                         <div class="fussballde_widget" data-id="a89f9f2a-7f2f-4e1f-af66-835c01857b58" data-type="team-matches"></div>
                     </div>
                 `;
-                // Widget erneut laden
+                
+                // Widget nach dem Laden des Inhalts erneut laden
                 if (window.fussballDeWidgets) {
                     window.fussballDeWidgets.load();
                 }
